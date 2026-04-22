@@ -1,0 +1,2890 @@
+div,
+button,
+textarea,
+span,
+input,
+select,
+img,
+label{
+    box-sizing: border-box;
+}
+div{
+    margin: 0px;
+    padding: 0px;
+}
+label {
+    font-size: 1em;
+    font-weight: normal;
+    width: auto;
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+}
+/* === Logos and images === */
+img{
+    margin: 0px;
+    padding: 0px;
+}
+.npc-icons {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-right: 6px;
+}
+.npc-icons span.npctype,
+.npc-icons span.npcterrain,
+.npc-icons span.npcclimate {
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.npc-icons input.npctype:not([value=""]) + span.npctype,
+.npc-icons input.npcterrain:not([value=""]) + span.npcterrain,
+.npc-icons input.npcclimate:not([value=""]) + span.npcclimate {
+    background-size: 70px 70px;
+    height: 70px;
+    width: 70px;
+    margin: -15px -10px 0px -10px;
+}
+.npc-icons input.npctype[value="aberration"] + span.npctype {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62548538/r3Rsbc7uIJz-O7pf8XxeGA/med.png");}
+.npc-icons input.npctype[value="animal"] + span.npctype {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62548559/Slmy0KlzDt0iNXkbVQROjw/med.png");}
+.npc-icons input.npctype[value="construct"] + span.npctype {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62548540/_i5Y1uKgt2cSDW7kHRlTpw/med.png");}
+.npc-icons input.npctype[value="dragon"] + span.npctype {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62548645/gDMjZqAb6ykBb6yiWx_aKw/med.png");}
+.npc-icons input.npctype[value="fey"] + span.npctype {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62548694/zlS-SGzbPhUDLx-oSsLEIQ/med.png");}
+.npc-icons input.npctype[value="humanoid"] + span.npctype {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62548737/DGyt11RQJzAes-sC932Hdw/med.png");}
+.npc-icons input.npctype[value="monstrous humanoid"] + span.npctype {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62548873/ZvNmcaFOG56_ZjGPgIeRGA/med.png");}
+.npc-icons input.npctype[value="magical beast"] + span.npctype {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62548954/QQXsWVOsgQjxw3Hn2vW0FQ/med.png");}
+.npc-icons input.npctype[value="ooze"] + span.npctype {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62548966/R4cNA8XUWboy6xXWBxW1IQ/med.png");}
+.npc-icons input.npctype[value="outsider"] + span.npctype {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62548977/KnTWZnXIM4XrJsl_qtjd3Q/med.png");}
+.npc-icons input.npctype[value="plant"] + span.npctype {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62549433/EdCGXBMMJFC7XvVAcXSiKw/med.png");}
+.npc-icons input.npctype[value="undead"] + span.npctype {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62549900/8mKziv92YzttbONAEry5fw/med.png");}
+.npc-icons input.npctype[value="vermin"] + span.npctype {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62550067/b69paJDk_FfyloamwKEleg/med.png");}
+
+.npc-icons input.npcterrain[value="desert"] + span.npcterrain {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62548539/TcFgRD-zleqwp3YjdopPZw/med.png");}
+.npc-icons input.npcterrain[value="forest"] + span.npcterrain {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62548700/RW6MawNZcnYDVUooKhp3NQ/med.png");}
+.npc-icons input.npcterrain[value="jungle"] + span.npcterrain {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62548700/RW6MawNZcnYDVUooKhp3NQ/med.png");}
+.npc-icons input.npcterrain[value="hill"] + span.npcterrain {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62548745/gWQYP1lgyDsopDtKWiQCxw/med.png");}
+.npc-icons input.npcterrain[value="mountain"] + span.npcterrain {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62548959/TqWCzneN_lj2to1Tw59vJA/med.png");}
+.npc-icons input.npcterrain[value="plain"] + span.npcterrain {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62548984/WV3iUV7iFAdHpaHvSDuzSg/med.png");}
+.npc-icons input.npcterrain[value="ruins"] + span.npcterrain {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62549436/w0ykODBInBjOrypAyTHUAg/med.png");}
+.npc-icons input.npcterrain[value="dungeon"] + span.npcterrain {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62549436/w0ykODBInBjOrypAyTHUAg/med.png");}
+.npc-icons input.npcterrain[value="sky"] + span.npcterrain {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62549524/4Gl6m7XQaGiF2SchQgxB1w/med.png");}
+.npc-icons input.npcterrain[value="swamp"] + span.npcterrain {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62549696/TJK9ax-AFp_n559AbF6wIw/med.png");}
+.npc-icons input.npcterrain[value="underground"] + span.npcterrain {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62549906/sNMPSyiybFjeno0v2cLTfg/med.png");}
+.npc-icons input.npcterrain[value="urban"] + span.npcterrain {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62550040/-CB6pti3YcUu2V0aGxE7Kw/med.png");}
+.npc-icons input.npcterrain[value="water"] + span.npcterrain {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62550078/RxZT55sijPZh0gV-56aHoQ/med.png");}
+
+.npc-icons input.npcclimate[value="cold"] + span.npcclimate {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62548565/XPEA3006C2Mm4X-rWo2_FA/med.png");}
+.npc-icons input.npcclimate[value="extraplanar"] + span.npcclimate {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62548648/Agoyfi00_KZhmVCpQ_WL3A/med.png");}
+.npc-icons input.npcclimate[value="temperate"] + span.npcclimate {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62549791/fm4DFa9HAslcLVGW-oa6ZQ/med.png");}
+.npc-icons input.npcclimate[value="tropical"] + span.npcclimate {background-image: url("https://s3.amazonaws.com/files.d20.io/images/62549799/NmQRtg53WtVmU47EdsWnpA/med.png");}
+
+/* ==== CLASSES ==== */
+.help {cursor: help;}
+.debug{
+    border: 1px solid red;
+}
+.underlined{
+    border-bottom: 1px solid black;
+}
+.bordered{
+    border: 1px solid black;
+    margin-bottom: 4px;
+}
+.titled{
+    margin-top: -13px;
+    padding-top: 15px;
+}
+.block{display: block;}
+.inbox{
+    padding-left:2px;
+    padding-bottom: 2px;
+    text-align: left;
+}
+.inboxright{
+    padding-right: 2px;
+    padding-bottom: 2px;
+    text-align: right;
+}
+.indent{
+    text-indent: 10px;
+}
+.padindent{
+    padding-left: 10px !important;
+}
+.margindent {
+    margin-left: 10px !important;
+}
+.bold{
+    font-weight: bold;
+}
+.center{
+    text-align: center;
+}
+.upper {
+    text-transform: uppercase;
+}
+.labline {
+    line-height: 1em;
+    white-space: nowrap;
+}
+.labline.right {
+    text-align: right;
+}
+.labline.top {
+    margin-top: 2px;
+}
+.invisible {
+    opacity: 0;
+}
+.greybg{
+    background-color: #DDD;
+}
+.grtopbrd{
+    border-top: 1px dashed #BBB;
+    margin-top: 6px;
+}
+.w100{
+    width: 100px;
+}
+.w50{
+    width: 50px;
+}
+.whitebgrd{
+    background: white;
+}
+.invisible {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.invisible:hover {
+    opacity: 1;
+}
+/* ==== DIVS ==== */
+div.statblock {
+    display: none;
+    vertical-align: top;
+    text-align: left;
+    width: 600px;
+    max-width: 600px;
+    background-color: white;
+    font-family: sans-serif;
+    color: black;
+    font-size: 1.0em;
+    position: relative;
+}
+div.fullpc{
+    display: block;
+    position: relative;
+    text-align: left;
+    width: 850px;
+    max-width: 850px;
+    background-color: white;
+    font-family: 'Times New Roman';
+    color: black;
+}
+.npc_toggle:checked ~ .statblock {
+    display: block;
+}
+.npc_toggle:checked ~ .fullpc {
+    display: none;
+}
+div.myrow{
+    width: 100%;
+    text-align: left;
+}
+div.flexrow {
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+}
+div.myrow.right{
+    text-align: right;
+}
+div.myrow.center{
+    text-align: center;
+}
+div.myrow .subcol {
+    width: 49.6%;
+}
+.npc-display div.myrow {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.topspace {margin-top: 6px;}
+div.abilities{
+    width: 250px;
+    max-width: 250px;
+}
+div.ability {
+    margin-bottom: 5px;
+}
+div.colhalf{
+    display: inline-block;
+    vertical-align: top;
+    width: 49.8%;
+    text-align: left;
+}
+div.col1third{
+    display: inline-block;
+    vertical-align: top;
+    width: 276px;
+    max-width: 276px;
+    margin: 1px;
+    text-align: center;
+}
+.spells div.col1third {
+    width: 275px;
+    max-width: 275px;
+    text-align: left;
+}
+div.col2third{
+    display: inline-block;
+    vertical-align: top;
+    width: 560px;
+    max-width: 560px;
+}
+.blacklabel{
+    display: inline-flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+    text-align: center;
+    vertical-align: top;
+    height: 24px;
+    text-transform: uppercase;
+    border: none;
+}
+.blacklabel.pnty {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.npc_expansion[value="8"] + .blacklabel.pnty {
+    background-color: #003a25;
+    color: #ddd6ab;
+}
+.blacklabel.sqr {
+    flex-flow: column wrap;
+    justify-content: center;
+}
+.blacklabel.right {
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+}
+.blacklabel .big {
+    display: inline-block;
+    font-size: 1.3em;
+    line-height: 1.0em;
+    font-weight: bold;
+}
+.blacklabel .big.only {
+    flex-grow: 2;
+}
+.blacklabel .med {
+    display: block;
+    font-size: 0.80em;
+    line-height: 0.85em;
+}
+.blacklabel .med.only {
+    align-self: flex-end;
+    margin-bottom: 3px;
+}
+.blacklabel .sml {
+    display: block;
+    font-size: 0.65em;
+    line-height: 0.65em;
+    font-family: sans-serif;
+}
+.spell-resistance .blacklabel {
+    width: 120px;
+}
+img.brdleft,
+img.brdright {
+    display: inline-block;
+    height: inherit;
+}
+img.brdleft {margin-right: 4px;}
+img.brdright {margin-left: 4px;}
+div.identity{
+    display: inline-block;
+    margin-left: 4px;
+}
+
+div.boxed {
+    display: inline-block;
+    position: relative;
+    border: 1px solid black;
+    width: 40px;
+    height: 24px;
+    vertical-align: top;
+    text-align: center;
+    background-color: white;
+}
+div.boxed.greybg {background-color: #DDD;}
+input.redbrd:not([value="0"]) + div.boxed.redbrd,
+.acvalues input.redbrd:not([value="0"]) ~ div.boxed.redbrd,
+.hpvalues input.redbrd[value="1"] ~ div.boxed.redbrd {
+    border-color: #BE202E;
+}
+input.redbrd:not([value="0"]) + div.boxed.redbrd span.pseudoattr,
+.acvalues input.redbrd:not([value="0"]) ~ div.boxed.redbrd  span.pseudoattr,
+.hpvalues input.redbrd[value="1"] ~ div.boxed.redbrd * {
+    color: #BE202E;
+}
+.hpvalues input.redbrd[value="2"] ~ div.boxed.redbrd {
+    border-color: #501414;
+}
+.hpvalues input.redbrd[value="2"] ~ div.boxed.redbrd * {
+    color: #501414;
+}
+.hpvalues input.redbrd:not([value="0"]) ~ div.boxed.redbrd span:after {
+    position: absolute;
+    content: "e";
+    font-family: "Pictos";
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin-left: 1px;
+    text-transform: lowercase;
+    text-decoration: none;
+}
+
+div.ability,
+div.acvalues,
+div.initiative,
+div.acitem,
+div.saves,
+div.babs,
+div.attackmods,
+div.defenses,
+div.attack,
+div.skill,
+div.concentration,
+div.spell,
+div.statblock,
+div.encumbrance,
+div.speeds,
+div.gearitem,
+div.skills,
+div.attacks {
+    position: relative;
+}
+div.abilities,
+div.subcol {
+    display: inline-block;
+    vertical-align: top;
+}
+div.subcol.hpinit {
+    width: 170px;
+    max-width: 170px;
+}
+div.initiative {display: block;}
+.identity span{
+    display: block;
+    margin-left: 2px;
+    text-transform: capitalize;
+    font-size: 1.03em;
+    color: black;
+}
+.identity input[type=text].medium {width: 139px;}
+.identity input[type=text].small {width: 46px;}
+.abilities .blacklabel {width: 80px;}
+.abilities div.boxed{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.initiative .blacklabel {width: 70px;}
+
+.initiative div.boxed {margin-left: 5px;}
+
+.acvalues .blacklabel.ac {width: 40px;}
+.acvalues .blacklabel.touch {width: 72px;}
+.acvalues .blacklabel.flatfooted {width: 131px;}
+
+div.save {display: inline-block;}
+div.saves div.boxed {width: 35px;}
+div.saves div.boxed span.pseudoattr {width: 31px;}
+.fortitude .blacklabel,
+.reflex .blacklabel,
+.will .blacklabel {width: 62px;}
+
+.babs .blacklabel.bab {width: 215px;}
+.babs .blacklabel.cmb {width: 75px;}
+
+.attackmods .blacklabel.melee,
+.attackmods .blacklabel.ranged {width: 123px;}
+
+.defenses .blacklabel.cmd {width: 84px;}
+.defenses .blacklabel.sr {width: 205px;}
+
+.speeds .blacklabel.land {width: 70px;}
+
+.acitems {
+    width: 584px;
+    max-width: 584px;
+}
+.acitems .item {width: 190px;}
+.acitems .equipped {width: 16px;}
+.acitems .ac,
+.acitems .flat,
+.acitems .touch,
+.acitems .natural,
+.acitems .deflection,
+.acitems .dodge,
+.acitems .check,
+.acitems .max,
+.acitems .spellfailure {width: 32px;}
+.acitems .spacer.type,
+.acitems .type {width: 50px;}
+.acitems .labunder .lab.totals {width: 90px;}
+.acitems .lab.shield,
+.acitems .lab.armor {width: 50px;}
+.acitem div.myrow {padding-left: 16px;}
+.acitem .speed {width: 50px;}
+.acitems .labunder .lab {width: 28px;}
+.acitem .name {width: 209px;}
+
+.attacks {text-align: right;}
+.attacks div.padindent {padding-left: 22px;}
+.attacks .dmgbase {width: 115px;}
+.attacks .dmgtype {width: 115px;}
+.attacks span.lbl.atk {
+    width: 55px;
+    vertical-align: bottom;
+}
+.attacks .blacklabel .weapon-title {width: 195px;}
+.attacks .blacklabel .atk-title {width: 105px;}
+.attacks .blacklabel .damage-title {width: 50px;}
+.attacks .blacklabel .ammo-title {width: 40px;}
+div.attack {margin-bottom: 2px;}
+.attack .weapon {
+    display: inline-block;
+    width: 208px;
+    text-align: left;
+    font-size: 1.1em;
+    padding-left: 2px;
+    vertical-align: top;
+}
+.attack .weapon .vs {
+    width: auto;
+    text-align: right;
+    font-family: sans-serif;
+    font-size: 0.8em;
+    white-space: pre;
+    vertical-align: top;
+}
+.attacks .atk {
+    display: inline-block;
+    width: 105px;
+    vertical-align: top;
+}
+.attacks .damage {
+    display: inline-block;
+    width: 50px;
+    vertical-align: top;
+}
+.attacks .atk .pseudoattr,
+.attacks .damage .pseudoattr {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 0.95em;
+}
+.attacks .ammo {width: 40px;}
+.attacks select.type {width: 55px;}
+.attacks select.vs {width: 90px;}
+.attacks select.dmg {width: 70px;}
+
+.skills .blacklabel {width: 85%;}
+.skills .blacklabel.totalranks {
+    width: 165px;
+    margin-left: 133px;
+}
+.skills .name {width: 180px;}
+.skill .number,
+.spellcasting .number,
+.spells .number {
+    width: 30px;
+    text-align: center;
+}
+.skill span.perform,
+.skill span.craft,
+.skill span.knowledge,
+.skill span.profession,
+.skill span.custom {
+    width: 60px;
+    overflow-x: hidden;
+}
+.skill span.custom.only {width: 180px;}
+.skill input[type="text"].craft,
+.skill input[type="text"].knowledge,
+.skill input[type="text"].perform,
+.skill input[type="text"].profession,
+.skill input[type="text"].custom {width: 117px;}
+
+.spellcasting .perlevel {margin-bottom: 1px;}
+.spellcasting .perlevel .lab,
+.spellcasting .perlevel .level {
+    width: 40px;
+    margin: 0px 1px 0px 1px;
+}
+.spellcasting .perlevel .boxed {margin: 0px 1px 0px 1px;}
+.spells .blacklabel {width: 60%;}
+div.spell {
+    margin-top: 0px;
+    white-space: nowrap;
+}
+.spell .lab {text-align: left;}
+span.std {width: 80px;}
+input[type="text"].std {
+    font-size: 1.2em;
+    line-height: 1.2em;
+}
+.spell input[type="text"].std {width: 180px;}
+.fullpc .feat input[type="text"].std,
+.fullpc .ability input[type="text"].std {width: 320px;}
+.statblock .feat input[type="text"].std {width: 210px;}
+.autoex.std {
+    display: inline-block;
+    vertical-align: bottom;
+}
+.spell .autoex.std {
+    width: 180px;
+    max-width: 180px;
+}
+.fullpc .feat .autoex.std,
+.fullpc .gear .autoex.std {
+    width: 320px;
+    max-width: 320px;
+}
+.statblock .feat .autoex.std {
+    width: 210px;
+    max-width: 210px;
+}
+.spell span.med {width: 95px;}
+.spell input[type="text"].med {
+    width: 145px;
+    font-size: 1.2em;
+    line-height: 1.2em;
+}
+.spell .atk {width: 50px;}
+.spell .damage {width: 80px;}
+.spell .dmgbase {width: 75px;}
+.spell .dcmod {width: 160px;}
+.spell .dmgtype {width: 70px;}
+.spell span.lbl.atk {width: 55px;}
+.spell span.lbl.typ {width: 35px;}
+.spell .spelldsp {
+    width: 185px;
+    text-align: left;
+    font-size: 1.2em;
+    padding-left: 2px;
+}
+.statblock .npcatk .attack {
+    display: inline-block;
+    position: relative;
+}
+.spells .pseudoattr.sml {width: 25px;}
+.fullpc .money .blacklabel,
+.fullpc .feats .blacklabel,
+.fullpc .traits .blacklabel,
+.fullpc .gear .blacklabel.title {width: 95%;}
+.fullpc .gear .blacklabel.total {
+    width: calc(100% + 2px);
+    padding-right: 2px;
+    margin-top: 2px;
+    margin-right: -2px;
+    margin-bottom: -2px;
+}
+.gear .qty  {width: 50px;}
+.gear .total {width: 35px;}
+.gear .weight {width: 75px;}
+.gear .wtotal {
+    width: 45px;
+    color: black;
+}
+.gearitem input.item {width: 260px;}
+.gear span.overload {color: white;}
+.gear input.overload[value="over"] + span.overload {
+    font-weight: bold;
+    color: #BE202E;
+    text-transform: uppercase;
+}
+
+.encumbrance .lab.std {width: 75px;}
+
+.conditions-container {
+    position: absolute;
+    text-align:left;
+    left: 0px;
+    vertical-align: top;
+}
+.conditions-container {
+    top: 74px;
+    z-index: 4;
+}
+.conditions-container .lab {
+    vertical-align: top;
+    font-size: 1em;
+}
+.conditions-container .lab.conditions-display {
+    width: 190px;
+    min-height: 13px;
+    padding: 1px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: absolute;
+    z-index: inherit;
+}
+.conditions-container .lab.conditions-display.conds {
+    color: #BE202E;
+    background: white;
+}
+.conditions-container .lab.conditions-display.buffs {
+    color: #501414;
+}
+.conditions-container .lab.conditions-display:hover {
+    background: white;
+    border: 1px solid black;
+    box-shadow: 3px 3px rgba(128,128,128,0.5);
+    white-space: normal;
+    z-index: +1;
+}
+.options.conditions {
+    position: absolute;
+    background: white;
+    top: -2px;
+    left: 86px;
+    border: 1px solid black;
+    box-shadow: 3px 3px rgba(128,128,128,0.5);
+    padding: 2px;
+    min-width: 450px;
+}
+.buffs .buff .options {
+    width: 420px;
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-bottom: 4px;
+    background: white;
+    padding: 5px;
+    border: 2px dotted #C3996B;
+}
+.building {
+    position: absolute;
+    background: linear-gradient(white, #DDD, white);
+    top: 10%;
+    left: 5%;
+    z-index: 10;
+    border: 2px solid black;
+    box-shadow: 3px 3px rgba(128,128,128,0.5);
+    width: 530px;
+    height: 500px;
+}
+.buildingtext {
+    font-weight: bold;
+    font-size: 1.8em;
+    position: relative;
+    color: #BE202E;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.static {
+    font-style: italic;
+    /* background: #ddd; */
+    border: 1px dotted #444;
+    padding: 2px;
+    border-radius: 3px;
+    color: #444;
+    margin-bottom: 6px;
+}
+
+/* ===== SPANS ===== */
+span {display: inline-block;}
+span.inline {display: inline;}
+span.roundblack {
+    background-color: black;
+    border-radius: 50%;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 0.8em;
+    height: 12px;
+    width: 12px;
+    line-height: 12px;
+    vertical-align: bottom;
+    text-align: center;
+}
+span.spacer{
+    min-width: 10px;
+    text-align: center;
+}
+span.lab {
+    text-align: center;
+    vertical-align: bottom;
+    font-family: sans-serif;
+    font-size: 0.84em;
+    line-height: 1.1em;
+    text-transform: capitalize;
+    white-space: pre;
+    color: black;
+}
+span.lab::before{
+    text-transform: none;
+}
+.lab.right{text-align: right;}
+.abilities .lab:first-child {width: 80px;}
+.abilities .lab {width: 50px;}
+.hpvalues .lab {width: 40px;}
+.initiative .lab {width: 40px;}
+.acvalues .lab,
+.babs .lab,
+.attackmods .lab,
+.defenses .lab,
+.speeds .lab {width: 40px;}
+.saves .lab {width: 35px;}
+.lab.under {
+    position: absolute;
+    top: 2.4rem;
+    left: 0;
+}
+.labunder {
+    margin-bottom:1.8rem;
+}
+.lbl {
+    text-align: left;
+    vertical-align: bottom;
+    font-family: sans-serif;
+    font-size: 0.75em;
+    line-height: 1.2em;
+    text-transform: capitalize;
+    white-space: pre;
+}
+.lbl.right {text-align: right;}
+.lbl.upper {text-transform: uppercase;}
+
+span.pseudoattr {
+    font-family: 'Patrick Hand';
+    font-size: 1.2em;
+    line-height: 16px;
+    height: 18px;
+    vertical-align: bottom;
+    white-space: pre-line;
+    overflow: hidden;
+    color: #211;
+}
+.pseudoattr.redtxt {color: #BE202E;}
+div.boxed span.pseudoattr {
+    width: 36px;
+    margin-top: 3px;
+}
+.acitems div.boxed {width: 28px;}
+.acitems div.boxed span.pseudoattr {
+    min-width: 26px;
+    width: 26px;
+}
+
+.skills .lab.class {width: 20px;}
+.skills .lab.name {
+    width: 176px;
+    text-align: left;
+}
+.skills .lab.total,
+.skills .lab.ability,
+.skills .lab.ranks,
+.skills .lab.misc {width: 39px;}
+.skills .lab.temp {width: 37px;}
+.skill div.skillability {display: none;}
+.skill input.skillability[value="strength"] + div.skillability,
+.skill input.skillability[value="dexterity"] + div.skillability {display: inline-block;}
+
+.fullpc .feat,
+.fullpc .ability {margin-top: 2px;}
+
+.statblock .senses {width: 350px;}
+.statblock .type {width: 325px;}
+.statblock .aura {width: 458px;}
+.statblock .skill {
+    width: 115px;
+    text-align: right;
+}
+span.npc-section {
+    display: block;
+    width: 100%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 1.15em;
+    margin-top: 10px;
+    padding-left: 2px;
+}
+
+.multiclass {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    flex-wrap: nowrap;
+}
+.multiclass-a {
+    min-width: 190px;
+}
+.multiclass-b {
+    min-width: 200px;
+}
+.multiclass-c {
+    min-width: 215px;
+}
+.multiclass-d {
+    min-width: 180px;
+}
+.multiclass-a,
+.multiclass-b,
+.multiclass-c,
+.multiclass-d {
+    text-align: right;
+    white-space: nowrap;
+}
+.multiclass .lab {
+    width: 30px;
+    font-weight: bold;
+}
+.multiclass.labline.bord {border-bottom: 1px dotted #CCC;}
+.multiclass .lab.spellcasting {
+    text-transform: uppercase;
+    text-align: center;
+    width: auto;
+}
+.multiclass .lab.class {width: 120px;}
+.multiclass .lab.fav {width: 15px;}
+.multiclass .lab.hd {width: 24px;}
+.multiclass .lab.spell,
+.multiclass .spell {
+    width: 20px;
+    text-align: center;
+}
+.multiclass .ability {width: 70px;}
+.multiclass .lab.fail {
+    width: 18px;
+    text-align: center;
+}
+.multiclass .boxed {width: 30px;}
+
+.npc-display span {
+    white-space: pre-wrap;
+}
+
+/* ===== INPUTS ===== */
+input, textarea{
+    background-color: transparent;
+    display: inline-block;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    font-family: 'Patrick Hand';
+    font-size: 1.2em;
+    color: #211;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    resize:none;
+}
+input:focus, input:hover, textarea:focus, textarea:hover, select:hover, select:focus{
+    background-color: rgba(230,221,148,0.3);
+    outline: none;
+}
+
+input[type="text"].right {text-align: right;}
+input[type="text"].spsml {width: 20px;}
+input[type="text"].sml {width: 30px;}
+input[type="text"].small {width: 45px;}
+input[type="text"].smlmed {width: 80px;}
+input[type="text"].medium {width: 140px;}
+input[type="text"].medium2 {width: 120px;}
+
+input[type="number"]{
+    text-align: center;
+    vertical-align: middle;
+}
+input[type="number"].nospin::-webkit-inner-spin-button,
+input[type="number"].nospin::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+input[type=number].nospin {
+    -moz-appearance:textfield;
+}
+input[type="number"].spsml {width: 20px;}
+.npc-display input[type="number"].spsml {vertical-align: top;}
+input[type="number"].sml {width: 30px;}
+div.boxed input[type="number"],
+div.boxed input[type="text"].expbuff {
+    width: 36px;
+    max-width: 36px;
+    height: 18px;
+    margin-top: 2px;
+}
+
+.identity input[type="number"],
+.attacks input[type="number"],
+.spells input[type="number"],
+.statblock input[type="number"].medium {
+    width: 35px;
+}
+
+.acitem input[type="number"]
+, .acitem input[type="text"].nbr {
+    width: 28px;
+    text-align: center;
+}
+.spells input[type="number"].sml
+, .attacks input[type="number"].sml {
+    width: 25px;
+}
+.skill input[type="number"],
+.spellcasting input[type="number"] {
+    width: 30px;
+    max-width: 30px;
+}
+
+select {
+    width: auto;
+    height: 1.3em;
+    line-height: 1.0em;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-transform: capitalize;
+    vertical-align: bottom;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    font-size: 1.0em;
+    font-family: sans-serif;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    resize: none;
+    background: transparent;
+    color: #211;
+}
+select.alignment {width: 110px;}
+select.size {width: 80px;}
+.acitem select{width: 50px;}
+
+/* ===== ABILITIES ===== */
+.baseattr {
+    opacity: 0;
+    pointer-events: none;
+    display: inline;
+    position: absolute;
+}
+.finalattr {
+    display: inline-block;
+}
+.boxed:hover .baseattr,
+.boxed .baseattr:focus {
+    opacity: 1;
+    width: 36px;
+    height: 18px;
+    pointer-events: auto;
+    position: static;
+}
+.boxed:hover .finalattr,
+.boxed .baseattr:focus ~ .finalattr {display: none;}
+/* ===== FLAGS ===== */
+.boxed .attr-flag:not([value="0"]) + .finalattr,
+.boxed .attr-flag:not([value="0"]) + span,
+.spellcasting .attr-flag:not([value="0"]) + span,
+.skill .attr-flag:not([value="0"]) + span,
+.spells .attr-flag:not([value="0"]) + span.prepared {
+    color: #501414;
+}
+.boxed .attr-flag:not([value="0"]) + .finalattr:after,
+.boxed .attr-flag:not([value="0"]) + span:after,
+.spellcasting .attr-flag:not([value="0"]) + span:after,
+.spells .attr-flag:not([value="0"]) +  span.prepared:after,
+.attacks .attr-flag:not([value="0"]) + span:after {
+    position: absolute;
+    content: "e";
+    font-family: "Pictos";
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin-left: 1px;
+    text-transform: lowercase;
+    text-decoration: none;
+}
+.skill .attr-flag:not([value="0"]) + span:before,
+.skill .attr-flag:not([value="0"]) + span:after {
+    font-family: "Pictos";
+    font-size: 1.6rem;
+    font-weight: normal;
+    text-transform: none;
+    text-decoration: none;
+    position: absolute;
+}
+.skill .attr-flag[value="1"] + span:before,
+.skill .attr-flag[value="3"] + span:before {
+    content: "U";
+    margin-left: -1.7rem;
+}
+.skill .attr-flag[value="2"] + span:after,
+.skill .attr-flag[value="3"] + span:after {
+    content: "e";
+    margin-left: 1px;
+}
+.spell .attr-flag + span{
+    position: absolute;
+    right: 75px;
+}
+.spell .attr-flag:not([value="0"]) + span:after{
+    font-family: "Pictos Three";
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #BE202E;
+    background: #DDD;
+    content: "g";
+}
+.spell .domain-flag + span {
+    margin-left: 2px;
+}
+.spell .domain-flag:not([value="0"]) + span:after {
+    font-family: "Times New Roman";
+    font-size: 0.60em;
+    font-weight: normal;
+    color: black;
+    background: transparent;
+    content: "D";
+    vertical-align: super;
+    line-height: 0.9em;
+}
+
+.picto {
+    font-family: "Pictos";
+    font-size: 16px;
+}
+/* === FLAG CONDITION === */
+.abilities div.ability div.blacklabel span.picto,
+.topspace.initiative span.picto,
+.saves .picto,
+.cmb span.picto,
+.attackmods .melee span.picto,
+.attackmods .ranged span.picto,
+.attacks .picto,
+.skills .picto {
+    position: absolute;
+    top: 2px;
+    color: #ffbac0;
+    display: none;
+}
+.abilities div.ability div.blacklabel span.picto {left: 63px;}
+.topspace.initiative span.picto {left: 53px;}
+.cmb span.picto {left: 276px;}
+.attackmods .melee span.picto {left: 16px;}
+.attackmods .ranged span.picto {left: 229px;}
+.saves .fortitude .picto {left: 48px;}
+.saves .reflex .picto {left: 190px;}
+.saves .will .picto {left: 333px;}
+.attacks .picto {left: 26px;}
+.skills .picto {left: 50px;}
+.abilities input.condition-flag:not([value="0"]) ~ div.ability div.blacklabel span.picto,
+.topspace.initiative input.condition-flag:not([value="0"]) + span.picto,
+.tabmain input.condition-flag.attacks:not([value="0"]) ~ div span.picto.attacks,
+
+.saves input.condition-flag:not([value="0"]) ~ .save span.picto,
+.skills input.condition-flag:not([value="0"]) + .picto
+ {display: inline-block;}
+
+/* ===== BUTTONS ===== */
+button[type="compendium"].myrol,
+button[type="roll"].myrol,
+button[type="action"].myrol {
+    text-align: center;
+    text-decoration: none;
+    background:none;
+    background-image:none;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    padding: inherit;
+    margin: inherit;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-transform: inherit;
+    text-align: inherit;
+    vertical-align: inherit;
+    border-radius: none;
+}
+button[type="compendium"].myrol:hover,
+button[type="action"].myrol:hover,
+button[type="roll"].myrol:hover,
+button[type="roll"].myrol:hover span,
+button[type="roll"].myrol:hover span.pseudoattr {
+    color: #BE202E;
+}
+button[type="roll"].myrol:before{
+    content: none;
+}
+button[type="compendium"].myrol:focus,
+button[type="roll"].myrol:focus,
+button[type="action"].myrol:focus {
+    outline:0;
+}
+.blacklabel button[type="roll"].myrol.big {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    font-size: 1.3em;
+    line-height: 1.0em;
+}
+.blacklabel button[type="roll"].myrol.big.only {
+    flex-grow: 2;
+}
+button[type="roll"].myrol.margindent {margin-left: 14px !important;}
+.statblock  button[type="roll"].myrol{margin: 0px 0px 0px 0px;}
+button[type="roll"].myrol.underl {
+    margin-left: 14px;
+    border-bottom: 1px dotted #999;
+}
+.spells .spell button[type="roll"].myrol.underl,
+.spelllike .spell button[type="roll"].myrol.underl {font-style: italic;}
+.spells .spell button[type="roll"].myrol.underl {
+    margin-right: 2px;
+    border-bottom: 1px dotted transparent;
+}
+button[type="roll"].myrol.underl:hover,
+.spells .spell button[type="roll"].myrol.underl:hover {border-bottom: 1px dotted #BE202E;}
+
+.statblock .attack .lbl.atk {width: 55px;}
+.statblock .prep {
+    width: 55px;
+    text-align: center;
+}
+
+button[type="compendium"].myrol {
+    display: none;
+}
+.fromcompendium:not([value=""]) + button[type="compendium"].myrol {
+    display: inline-block;
+}
+
+button[type="action"].myrol.border {
+    border: 1px dotted transparent;
+    border-radius: 10%;
+}
+button[type="action"].myrol.border:hover {
+    border-color: #BE202E;
+}
+.skills button[type="roll"].myrol{
+    line-height:1;
+}
+
+/* ===== PSEUDO CHECKS and RADIOS ===== */
+input[type="checkbox"].pseudocheck,
+input[type="radio"].pseudocheck {
+    opacity: 0;
+    width: 13px;
+    cursor: pointer;
+    z-index: 10;
+    margin-top: 3px;
+    line-height: 13px;
+}
+input[type="checkbox"].pseudocheck + span,
+input[type="radio"].pseudocheck + span {
+    font-size: 13px;
+    line-height: 13px;
+    white-space: nowrap;
+    display: inline-block;
+    margin-left: -13px;
+}
+input[type="checkbox"].pseudocheck + span::before,
+input[type="radio"].pseudocheck + span::before {
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    background: transparent;
+    margin-right: 1px;
+}
+input[type="checkbox"].pseudocheck + span::before {
+    content: "☐";
+    line-height: 18px;
+    font-size: 18px;
+}
+input[type="checkbox"].pseudocheck:checked + span::before {
+    content: "☑";
+}
+input[type="radio"].pseudocheck + span {
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 13px;
+    height: 13px;
+    vertical-align: bottom;
+}
+input[type="radio"].pseudocheck + span::before {
+    content: "";
+    margin-top: -4px;
+}
+input[type="radio"].pseudocheck:checked + span::before {
+    content: "✔";
+}
+
+.labelcheck {
+    min-width: 85px;
+    cursor: pointer;
+    position: relative;
+}
+.statblock .labelcheck {display: inline-block;}
+.labelcheck input[type="checkbox"],
+.labelcheck input[type="radio"] {
+    opacity: 0;
+    z-index: +1;
+    position: absolute;
+}
+.labelcheck input[type="checkbox"] + span,
+.labelcheck input[type="radio"] + span {
+    margin-left: 0px;
+}
+.labelcheck input[type="checkbox"] + span::before,
+.labelcheck input[type="radio"] + span::before {
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    background: transparent;
+    margin-right: 1px;
+}
+.labelcheck input[type="checkbox"] + span::before,
+.labelcheck input[type="radio"] + span::before {
+    content: "☐";
+    line-height: 18px;
+    font-size: 18px;
+}
+.labelcheck input[type="checkbox"]:checked + span::before,
+.labelcheck input[type="radio"]:checked + span::before {
+    content: "☑";
+    text-shadow: none;
+}
+.labelcheck:hover input[type="checkbox"] + span::before,
+.labelcheck:hover input[type="radio"] + span::before {
+    text-shadow: none;
+}
+.labelcheck:hover input[type="checkbox"] + span,
+.labelcheck input[type="checkbox"]:checked + span,
+.labelcheck input[type="radio"]:checked + span {
+    text-shadow: 0px 0px 1px currentColor;
+}
+.options.conditions .conds .labelcheck input[type="checkbox"]:checked + span,
+.options.conditions .conds .labelcheck input[type="hidden"]:not([value="0"]) + span {
+    color: #BE202E;
+    text-shadow: 0px 0px 1px #BE202E;
+}
+.options.conditions .buffs .labelcheck input[type="checkbox"]:checked + span {
+    color: #501414;
+    text-shadow: 0px 0px 1px #501414;
+}
+div.conditions .lbl {
+    font-size: 0.95em;
+}
+
+.pictocheck input[type="checkbox"] {
+    display: none;
+}
+.pictocheck span {
+    background: transparent;
+}
+.pictocheck span::before {
+    font-family: "Pictos";
+    font-size: 1.3em;
+    margin-right: 2px;
+    font-weight: bold;
+    color: #888;
+}
+.pictocheck span.reset::before {content: "1";}
+.pictocheck span.condcheck::before {content: "Y";}
+.pictocheck span.close::before {content: "*";}
+.pictocheck span.buffcheck::before {content: "e";}
+.pictocheck:hover span {
+    text-shadow: 0px 0px 1px currentColor;
+}
+.pictocheck:hover span::before  {
+    color: black;
+    text-shadow: none;
+}
+.pictocheck:hover span.condcheck::before,
+.pictocheck:hover span.reset.conds::before {
+    color: #BE202E;
+}
+.pictocheck:hover span.buffcheck::before,
+.pictocheck:hover span.reset.buffs::before {
+    color: #501414;
+}
+
+/* ==== LEFT FILLED RADIO  ==== */
+.dots {
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+}
+.spell div.dots {
+    width: 70px;
+    text-align: left;
+    vertical-align: center;
+}
+.dots input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+}
+.dots input[type="radio"],
+.dots input[type="radio"] + span {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin: 3px -1px 0px -1px;
+}
+.dots input[type="radio"] + span {
+    vertical-align: top;
+    position: relative;
+    background: transparent;
+}
+.dots input[type="radio"]:not([value="0"]) + span {
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.dots input[type="radio"]:not([value="0"]) + span::before {
+    content: "✔";
+    position: absolute;
+    top: -3px;
+    left: 0px;
+}
+.dots input[type="radio"]:checked ~ input[type="radio"] + span::before {
+    content: " ";
+}
+.dots input[type="radio"][value="0"] + span:before {
+    content: "✗";
+    font-family: sans-serif;
+    font-size: 1.2em;
+    line-height: 0.9em;
+    position: relative;
+}
+.dots input[type="radio"][value="0"]:hover + span:before {
+    font-weight: bold;
+    color: #BE202E;
+}
+/* ===== PSEUDO TABS ===== */
+div.tabmain,
+div.tabadd,
+div.tabspell,
+div.tabconf {
+    display: none;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid black;
+    padding-top: 4px;
+}
+input.tabmain:checked ~ div.tabmain{
+    display: block;
+}
+input.tabadd:checked ~ div.tabadd{
+    display: block;
+}
+input.tabspell:checked ~ div.tabspell{
+    display: block;
+}
+input.tabconf:checked ~ div.tabconf{
+    display: block;
+}
+input.tabmain,
+input.tabadd,
+input.tabspell,
+input.tabconf{
+    margin: 0;
+    margin-top: -4px;
+    margin-bottom: -4px;
+    padding: 0;
+    display: inline-block;
+    opacity: 0;
+    width: 110px;
+    height: 20px;
+    z-index: 2;
+}
+input.tabmain + span,
+input.tabadd + span,
+input.tabspell + span,
+input.tabconf + span{
+    color: #2E2E2E;
+    background-color: #BBBBBB;
+    font-size: 0.85em;
+    text-align:center;
+    display: inline-block;
+    width: 110px;
+    height: 20px;
+    margin: 0;
+    margin-left: -110px;
+    margin-right: -5px;
+    padding:0;
+    margin-bottom: -1px;
+    text-transform: uppercase;
+    border: 1px solid #666666;
+    border-bottom-color: black;
+    z-index: 1;
+}
+input.tabmain:checked + span,
+input.tabadd:checked + span,
+input.tabspell:checked + span,
+input.tabconf:checked + span{
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    border-left-color: black;
+    border-top-color: black;
+    border-right-color: black;
+    border-bottom-color: white;
+}
+/* ===== OPTIONS ===== */
+.options-flag {
+    opacity: 0;
+    position: absolute;
+    width: 16px;
+    min-height: 16px;
+    z-index: 2;
+}
+.options-flag + span {
+    position: absolute;
+    white-space: nowrap;
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    font-family: pictos;
+    color: #BBBBBB;
+    cursor: pointer;
+    margin-top: 0px;
+    display: none;
+}
+.options-flag:hover + span,
+.options-flag:checked + span {
+    color: #C3996B;
+    display: block;
+}
+.abilities .options-flag,
+.abilities .options-flag + span,
+.acvalues .options-flag,
+.acvalues .options-flag + span,
+.initiative .options-flag,
+.initiative .options-flag + span,
+.saves .options-flag.fortitude,
+.saves .options-flag.fortitude + span,
+.babs .options-flag.bab,
+.babs .options-flag.bab + span,
+.attackmods .options-flag.melee,
+.attackmods .options-flag.melee + span,
+.defenses .options-flag.cmd,
+.defenses .options-flag.cmd + span,
+.attacks .options-flag,
+.attacks .options-flag + span,
+.skill .options-flag,
+.skill .options-flag + span,
+.concentration .options-flag,
+.concentration .options-flag + span,
+.spell .options-flag,
+.spell .options-flag + span,
+.speeds .options-flag,
+.speeds .options-flag + span,
+.gearitem .options-flag,
+.gearitem .options-flag + span,
+.conditions-container .options-flag + span {
+    top: -2px;
+    left: 0px;
+}
+.saves .options-flag.reflex,
+.saves .options-flag.reflex + span {
+    top: -2px;
+    left: 141px;
+}
+.saves .options-flag.will,
+.saves .options-flag.will + span {
+    top: -2px;
+    left: 283px;
+}
+.babs .options-flag.cmb,
+.babs .options-flag.cmb + span {
+    top: -2px;
+    left: 262px;
+}
+.attackmods .options-flag.ranged,
+.attackmods .options-flag.ranged + span {
+    top: -2px;
+    left: 215px;
+}
+.defenses .options-flag.sr,
+.defenses .options-flag.sr + span {
+    top: -2px;
+    left: 0px;
+}
+.abilities .ability:hover .options-flag + span,
+.acvalues:hover .options-flag + span,
+.initiative:hover .options-flag + span,
+.acitem:hover .options-flag + span,
+.saves:hover .options-flag + span,
+.babs:hover .options-flag + span,
+.attackmods:hover .options-flag + span,
+.defenses:hover .options-flag + span,
+.attack:hover .options-flag + span,
+.skill:hover .options-flag + span,
+.concentration:hover .options-flag + span,
+.spell:hover .options-flag + span,
+.statblock .head-info:hover .options-flag + span,
+.statblock .npcatk .attack:hover .options-flag + span,
+.feat:hover .options-flag + span,
+.ability:hover .options-flag + span,
+.metamagic:hover .options-flag + span,
+.encumbrance:hover .options-flag + span,
+.speeds:hover .options-flag + span,
+.gearitem:hover .options-flag + span,
+.buff:hover .options-flag + span {
+    display: block;
+}
+
+.options,
+.options-fortitude,
+.options-reflex,
+.options-will,
+.options-bab,
+.options-cmb,
+.options-melee,
+.options-ranged,
+.options-cmd,
+.options-sr {
+    display: none;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 3px;
+    border: 2px dotted #C3996B;
+}
+.fullpc .options,
+.options-fortitude,
+.options-reflex,
+.options-will,
+.options-bab,
+.options-cmb,
+.options-melee,
+.options-ranged,
+.options-cmd,
+.options-sr {
+    background-color: rgb(250,250,250);
+}
+.spelllike .options,
+.npcatk .options {
+    background-color: rgb(250,250,250);
+    width: 100%;
+}
+
+.options-flag:checked ~ .options,
+.options-flag.fortitude:checked ~ .options-fortitude,
+.options-flag.reflex:checked ~ .options-reflex,
+.options-flag.will:checked ~ .options-will,
+.options-flag.bab:checked ~ .options-bab,
+.options-flag.cmb:checked ~ .options-cmb,
+.options-flag.melee:checked ~ .options-melee,
+.options-flag.ranged:checked ~ .options-ranged,
+.options-flag.cmd:checked ~ .options-cmd,
+.options-flag.sr:checked ~ .options-sr {
+    display: inherit;
+}
+
+.optional-flag,
+.optional-flag0 {display: none;}
+.optional,
+.tabspell.optional.inl,
+.tabspell.optional.inl + span.optional.inl,
+.spells .col1third.optional.inl {
+    display: none;
+}
+.optional-flag:not([value=""]) + .optional.blk,
+.optional-flag0:not([value="0"]) + .optional.blk {
+    display: block;
+}
+.optional-flag:not([value=""]) + .optional.inl,
+.optional-flag0:not([value="0"]) + .optional.inl,
+.optional-flag0:not([value="0"]) + .tabspell.optional.inl,
+.optional-flag0:not([value="0"]) + .tabspell.optional.inl + span.optional.inl,
+.spells .optional-flag0:not([value="0"]) + .col1third.optional.inl {
+    display: inline-block;
+}
+
+/* ===== AUTO EXPAND TEXTAREA ===== */
+.autoex {
+    position: relative;
+    cursor: text;
+    font-family: 'Patrick Hand';
+    font-size: 1.2em;
+    line-height: 1.4em;
+    min-height: 1.4em;
+    text-align: left;
+}
+.autoex span {
+    visibility: hidden;
+    display: block;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    white-space: pre-wrap;
+    text-align: inherit;
+    min-height: inherit;
+}
+.autoex textarea {
+    display: block;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    white-space: pre-wrap;
+    text-align: inherit;
+    min-height: inherit;
+}
+.hpvalues.autoex {
+    font-size: 1.15em;
+    line-height: 1.15em;
+}
+/* ===== REPEATING SECTIONS CTRL ===== */
+.fullpc .repcontrol {
+    margin-top: 2px;
+    min-height: 27px;
+    width: 90%;
+    text-align: center;
+}
+.repcontrol .btn {
+    border: none;
+    color: white !important;
+    background: none;
+    box-shadow: none;
+    font-size: 0;
+}
+.fullpc .repcontrol .btn {padding: 0px 0px 0px 0px;}
+.statblock .repcontrol .btn {
+    padding: 0px 0px 0px 0px;
+    margin-left: 10px;
+    display: inline-block;
+    width: 25px;
+    font-size: 0px;
+}
+
+.repcontrol .btn:focus {outline: 0;}
+.repcontrol .repcontrol_add:before {
+    content: '&';
+    font-family: pictos;
+    color: black;
+    display: inline-block;
+}
+.fullpc .repcontrol  .repcontrol_add:before,
+.fullpc .repcontrol .repcontrol_edit:after {
+    border: 1px solid black;
+    border-radius: 50%;
+    font-size: 13px;
+    padding: 3px;
+    height: 12px;
+    width: 12px;
+    line-height: 12px;
+}
+.statblock .repcontrol .repcontrol_add:before,
+.statblock .repcontrol .repcontrol_edit:after {
+    font-size: 12px;
+    padding: 2px;
+    height: 10px;
+    width: 10px;
+    line-height: 10px;
+}
+
+.repcontrol .repcontrol_edit:after {
+    content: '(';
+    font-family: pictos;
+    color: black;
+    display: inline-block;
+}
+.editmode ~ .repcontrol .repcontrol_edit:after {
+    content: ')';
+    vertical-align: bottom;
+}
+
+.repcontrol .repcontrol_edit:hover:after,
+.repcontrol .repcontrol_add:hover:before {
+    color: #C3996B;
+    border-color: #C3996B;
+}
+.repcontainer .repitem .itemcontrol {z-index: 10;}
+.repcontainer .repitem .itemcontrol .repcontrol_del {
+    float: right;
+    font-size: 10px;
+    padding: 0px;
+    height: 18px;
+    width: 18px;
+}
+.repcontainer .repitem .itemcontrol .repcontrol_move {
+    cursor: move;
+    float: left;
+    font-size: 10px;
+    padding: 0px;
+    height: 18px;
+    width: 18px;
+}
+.statblock .npcatk .repitem,
+.statblock .npcatk .repcontrol,
+.statblock .npcatk .repcontainer,
+.buffs .repitem,
+.buffs .repcontrol,
+.buffs .repcontainer {
+    vertical-align: top;
+}
+.statblock .npcatk .repitem,
+.statblock .npcatk .repcontrol,
+.buffs .repitem,
+.buffs .repcontrol {
+    display: inline-block;
+}
+.statblock .npcatk .repcontainer {
+    display: inline;
+}
+.statblock .npcatk.melee .repcontainer,
+.statblock .npcatk.feats .repcontainer {max-width: 560px;}
+.statblock .npcatk.ranged .repcontainer {max-width: 545px;}
+.statblock .npcatk.special .repcontainer {max-width: 500px;}
+.statblock .npcatk.spells .repcontainer {max-width: 540px;}
+
+/* ===== ROLL TEMPLATES ===== */
+.sheet-rolltemplate-pc,
+.sheet-rolltemplate-npc {font-family: sans-serif;}
+
+/* API buttons */
+.sheet-rolltemplate-pc a[href^="~"] {
+    background-color: transparent;
+    padding: 0px 0px 0px 0px;
+    color: #182C4A;
+    display: inline-block;
+    border: none;
+    text-align: left;
+    font-family: sans-serif;
+    font-size: 0.95em;
+    line-height: 1em;
+    text-transform: capitalize;
+    white-space: pre;
+    font-weight: bold;
+}
+.sheet-rolltemplate-pc a:hover {color: #BE202E;}
+
+/* Rolls */
+.sheet-rolltemplate-pc .inlinerollresult,
+.sheet-rolltemplate-npc .inlinerollresult,
+.sheet-rolltemplate-mancerroll .inlinerollresult {
+    background-color: transparent;
+    border: none;
+    padding: 0px 0px;
+    font-weight: bold;
+    cursor: help;
+    font-size: 1.25em;
+    padding: 2px;
+}
+.sheet-rolltemplate-pc .inlinerollresult,
+.sheet-rolltemplate-mancerroll .inlinerollresult {color: #182C4A;}
+.sheet-rolltemplate-npc .inlinerollresult {color: #222;}
+
+.sheet-rolltemplate-pc .sheet-resright .inlinerollresult,
+.sheet-rolltemplate-npc .sheet-bigres .inlinerollresult {
+    font-size: 1.6em;
+    line-height: 1.45em;
+}
+.sheet-rolltemplate-pc .sheet-success,
+.sheet-rolltemplate-npc .sheet-success {
+    color: #247305;
+}
+.sheet-rolltemplate-pc .sheet-failure,
+.sheet-rolltemplate-npc .sheet-failure {
+    color: #BE202E;
+}
+.sheet-rolltemplate-pc .inlinerollresult.fullcrit,
+.sheet-rolltemplate-mancerroll  .inlinerollresult.fullcrit,
+.sheet-rolltemplate-npc .inlinerollresult.fullcrit {
+    border: none;
+    color: #247305;
+}
+.sheet-rolltemplate-pc .inlinerollresult.importantroll,
+.sheet-rolltemplate-mancerroll .inlinerollresult.importantroll,
+.sheet-rolltemplate-npc .inlinerollresult.importantroll {
+    border: none;
+    color: #4A57ED;
+}
+.sheet-rolltemplate-pc .inlinerollresult.fullfail,
+.sheet-rolltemplate-mancerroll .inlinerollresult.fullfail,
+.sheet-rolltemplate-npc .inlinerollresult.fullfail {
+    border: none;
+    color: #BE202E;
+}
+
+/* flex */
+.sheet-rolltemplate-pc .sheet-flexatk,
+.sheet-rolltemplate-mancerroll .sheet-flexatk,
+.sheet-rolltemplate-npc .sheet-flexatk {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sheet-rolltemplate-pc .sheet-flexatk,
+.sheet-rolltemplate-mancerroll .sheet-flexatk {border-top: 1px dotted #182C4A;}
+.sheet-rolltemplate-npc .sheet-flexatk {border-top: 1px dotted #3C2517;}
+
+.sheet-rolltemplate-pc .sheet-spacer,
+.sheet-rolltemplate-npc .sheet-spacer {flex-grow: 2;}
+.sheet-rolltemplate-pc .sheet-flexdmg,
+.sheet-rolltemplate-npc .sheet-flexdmg {
+    display: flex;
+    align-items: center;
+}
+
+/* classes */
+.sheet-rolltemplate-pc div,
+.sheet-rolltemplate-pc span,
+.sheet-rolltemplate-pc img,
+.sheet-rolltemplate-mancerroll div,
+.sheet-rolltemplate-mancerroll span,
+.sheet-rolltemplate-mancerroll img,
+.sheet-rolltemplate-npc div,
+.sheet-rolltemplate-npc span,
+.sheet-rolltemplate-npc img {
+    box-sizing: border-box;
+}
+.sheet-rolltemplate-pc div,
+.sheet-rolltemplate-mancerroll div,
+.sheet-rolltemplate-npc div {
+    margin: 0px;
+    padding: 0px;
+}
+.sheet-rolltemplate-pc img,
+.sheet-rolltemplate-mancerroll img,
+.sheet-rolltemplate-npc img {
+    margin: 0px;
+    padding: 0px;
+}
+.sheet-rolltemplate-pc .sheet-center,
+.sheet-rolltemplate-npc .sheet-center {text-align: center;}
+.sheet-rolltemplate-pc .sheet-right,
+.sheet-rolltemplate-npc .sheet-right {text-align: right;}
+.sheet-rolltemplate-pc .sheet-ital,
+.sheet-rolltemplate-npc .sheet-ital {font-style: italic;}
+.sheet-rolltemplate-pc .sheet-inl,
+.sheet-rolltemplate-npc .sheet-inl {display: inline;}
+.sheet-rolltemplate-pc .sheet-bold,
+.sheet-rolltemplate-mancerroll .sheet-bold,
+.sheet-rolltemplate-npc .sheet-bold {font-weight: bold;}
+.sheet-rolltemplate-pc .sheet-vtop,
+.sheet-rolltemplate-npc .sheet-vtop {vertical-align: top;}
+
+.sheet-rolltemplate-pc .sheet-myrow,
+.sheet-rolltemplate-npc .sheet-myrow {
+    padding: 0px 1px 0px 2px;
+}
+
+.sheet-rolltemplate-pc div.sheet-charname,
+.sheet-rolltemplate-mancerroll div.sheet-charname {
+    border-style: solid;
+    border-width: 1px 1px 0px 1px;
+    padding: 1px 1px 1px 2px;
+    background-color: white;
+    border-color: #182C4A;
+}
+.sheet-rolltemplate-npc div.sheet-charname {
+    padding: 4px 0px 1px 0px;
+    background-color: transparent;
+    margin-left: -14px;
+    text-shadow: 1px 1px #FDFDFD;
+    font-size: 1em;
+}
+
+.sheet-rolltemplate-pc div.sheet-notes,
+.sheet-rolltemplate-npc div.sheet-notes {
+    max-height: 220px;
+    overflow-y: auto;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 2px;
+    padding: 1px 1px 1px 2px;
+    background-color: #DDD;
+    border-color: #BBB;
+}
+
+.sheet-rolltemplate-pc div.sheet-desc,
+.sheet-rolltemplate-npc div.sheet-desc {
+    max-height: 220px;
+    overflow-y: auto;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 2px;
+    padding: 1px 1px 1px 2px;
+}
+.sheet-rolltemplate-pc div.sheet-desc {
+    background-color: white;
+    border-color: #182C4A;
+}
+.sheet-rolltemplate-npc div.sheet-desc {
+    border-color: #3C2517;
+    background-color: white;
+}
+
+.sheet-rolltemplate-pc span.sheet-notes,
+.sheet-rolltemplate-npc span.sheet-notes {
+    font-family: sans-serif;
+    font-size: 0.9em;
+    color: black;
+}
+.sheet-rolltemplate-pc span.sheet-notes.sheet-conditions {color: #BE202E;}
+
+.sheet-rolltemplate-pc .sheet-lbl,
+.sheet-rolltemplate-npc .sheet-lbl {
+    text-align: left;
+    font-family: sans-serif;
+    font-size: 0.95em;
+    line-height: 1em;
+    text-transform: capitalize;
+    white-space: pre;
+}
+.sheet-rolltemplate-pc .sheet-lbl {color: #182C4A;}
+.sheet-rolltemplate-npc .sheet-lbl {color: #3C2517;}
+
+.sheet-rolltemplate-pc .sheet-bordered,
+.sheet-rolltemplate-mancerroll .sheet-bordered,
+.sheet-rolltemplate-npc .sheet-bordered {
+    border-style: solid;
+    border-width: 1px;
+    text-align: left;
+    vertical-align: top;
+    position: relative;
+}
+.sheet-rolltemplate-pc .sheet-bordered .sheet-myrow:nth-child(odd),
+.sheet-rolltemplate-mancerroll .sheet-bordered .sheet-myrow:nth-child(odd) {
+    background: linear-gradient(to left,white,#D8DBE6);
+}
+.sheet-rolltemplate-npc .sheet-bordered .sheet-myrow:nth-child(even),
+.sheet-rolltemplate-mancerroll .sheet-bordered .sheet-myrow:nth-child(even)  {
+    background: linear-gradient(to left,#c3996b7a,white);
+}
+
+/* ICONS */
+.sheet-rolltemplate-pc .sheet-icon,
+.sheet-rolltemplate-npc .sheet-icon {
+    position: absolute;
+    top: 6px;
+    left: -40px;
+    width: 40px;
+    text-align: center;
+}
+.sheet-rolltemplate-pc .sheet-icon::after,
+.sheet-rolltemplate-npc .sheet-icon::after {font-size: 1.55em;}
+.sheet-rolltemplate-pc .sheet-icon::after {color: #182C4A;}
+.sheet-rolltemplate-npc .sheet-icon::after {color: #3C2517;}
+.sheet-rolltemplate-pc .sheet-icon.sheet-initiative::after,
+.sheet-rolltemplate-npc .sheet-icon.sheet-initiative::after {
+    font-family: "Pictos";
+    content: 'g';
+    font-size: 2em;
+}
+.sheet-rolltemplate-pc .sheet-icon.sheet-skill::after,
+.sheet-rolltemplate-npc .sheet-icon.sheet-skill::after {
+    font-family: "Pictos";
+    content: 'x';
+}
+.sheet-rolltemplate-pc .sheet-icon.sheet-hp::after,
+.sheet-rolltemplate-npc .sheet-icon.sheet-hp::after {
+    font-family: "Pictos";
+    content: 'k';
+}
+.sheet-rolltemplate-pc .sheet-icon.sheet-save::after,
+.sheet-rolltemplate-npc .sheet-icon.sheet-save::after {
+    font-family: "Pictos Custom";
+    content: 'e';
+}
+.sheet-rolltemplate-pc .sheet-icon.sheet-attackdamage::after,
+.sheet-rolltemplate-npc .sheet-icon.sheet-attackdamage::after {
+    font-family: "Pictos Custom";
+    font-weight: bold;
+    content: '⚔t';
+}
+.sheet-rolltemplate-pc .sheet-icon.sheet-attack::after,
+.sheet-rolltemplate-npc .sheet-icon.sheet-attack::after {
+    font-family: "Pictos Custom";
+    font-weight: bold;
+    content: '⚔';
+}
+.sheet-rolltemplate-pc .sheet-icon.sheet-damage::after,
+.sheet-rolltemplate-npc .sheet-icon.sheet-damage::after {
+    font-family: "Pictos Custom";
+    font-weight: bold;
+    content: 't';
+}
+.sheet-rolltemplate-pc .sheet-icon.sheet-ability::after,
+.sheet-rolltemplate-npc .sheet-icon.sheet-ability::after {
+    font-family: "Pictos";
+    content: 'U';
+}
+.sheet-rolltemplate-pc .sheet-icon.sheet-feat::after,
+.sheet-rolltemplate-npc .sheet-icon.sheet-feat::after {
+    font-family: "Pictos";
+    content: 'E';
+}
+.sheet-rolltemplate-pc .sheet-icon.sheet-spell::after,
+.sheet-rolltemplate-npc .sheet-icon.sheet-spell::after {
+    font-family: "Pictos Three";
+    content: 'j';
+    font-size: 2em;
+}
+
+.sheet-rolltemplate-pc .sheet-bordered,
+.sheet-rolltemplate-mancerroll .sheet-bordered {
+    background-color: white;
+    border-color: #182C4A;
+}
+.sheet-rolltemplate-npc .sheet-bordered {
+    background-color: white;
+    border-color: #3C2517;
+}
+
+.sheet-rolltemplate-pc .sheet-symbol,
+.sheet-rolltemplate-npc .sheet-symbol {
+    font-family: "Pictos Custom";
+    font-size: 1.3em;
+    font-weight: bold;
+    line-height: 1em;
+}
+.sheet-rolltemplate-pc .sheet-smallname,
+.sheet-rolltemplate-mancerroll .sheet-smallname,
+.sheet-rolltemplate-npc .sheet-smallname {
+    font-family: sans-serif;
+    font-size: 0.9em;
+}
+.sheet-rolltemplate-pc .sheet-smallname,
+.sheet-rolltemplate-mancerroll .sheet-smallname {
+    color: #182C4A;
+}
+.sheet-rolltemplate-npc .sheet-smallname {color: #3C2517;}
+
+/* top bands */
+.sheet-rolltemplate-pc img.sheet-brdright,
+.sheet-rolltemplate-mancerroll img.sheet-brdright,
+.sheet-rolltemplate-pc img.sheet-brdleft {
+    display: inline-block;
+    vertical-align: top;
+}
+.sheet-rolltemplate-pc img.sheet-brdright,
+.sheet-rolltemplate-pc img.sheet-brdleft {
+    position: absolute;
+    top: 0px;
+}
+.sheet-rolltemplate-pc img.sheet-brdleft,
+.sheet-rolltemplate-mancerroll img.sheet-brdleft {
+    left: 0px;
+}
+.sheet-rolltemplate-pc img.sheet-brdright {right: 0px;}
+
+.sheet-rolltemplate-pc .sheet-blacklabel,
+.sheet-rolltemplate-npc .sheet-blacklabel {
+    vertical-align: top;
+    border: none;
+    position: relative;
+    font-size: 0.9em;
+}
+.sheet-rolltemplate-pc .sheet-blacklabel,
+.sheet-rolltemplate-npc .sheet-blacklabel {
+    display: inline-block;
+}
+.sheet-rolltemplate-mancerroll .sheet-blacklabel {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.sheet-rolltemplate-pc .sheet-blacklabel,
+.sheet-rolltemplate-mancerroll .sheet-blacklabel {
+    background-color: #182C4A;
+    color: white;
+}
+.sheet-rolltemplate-npc .sheet-blacklabel {
+    background-color: transparent;
+    color: #3C2517;
+    font-weight: bold;
+}
+/* top */
+.sheet-rolltemplate-pc .sheet-blacklabel.sheet-top {
+    height: 36px;
+    width: 84%;
+    max-width: 84%;
+    vertical-align: top;
+    padding-right: 27px;
+}
+.sheet-rolltemplate-npc .sheet-blacklabel.sheet-top {
+    height: 36px;
+    width: 78%;
+    max-width: 78%;
+    vertical-align: top;
+    padding-right: 27px;
+}
+
+.sheet-rolltemplate-pc .sheet-blacklabel.sheet-top img.sheet-brdright,
+.sheet-rolltemplate-npc .sheet-blacklabel.sheet-top img.sheet-brdright {
+    width: 26px;
+    height: 36px;
+}
+/* med */
+.sheet-rolltemplate-pc span.sheet-med {
+    font-weight: normal;
+    font-size: 0.9em;
+}
+.sheet-rolltemplate-npc span.sheet-med {
+    font-style: italic;
+    color: #3C2517;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.sheet-rolltemplate-pc .sheet-blacklabel.sheet-med,
+.sheet-rolltemplate-mancerroll .sheet-blacklabel.sheet-med,
+.sheet-rolltemplate-npc .sheet-blacklabel.sheet-med {
+    height: 20px;
+    vertical-align: top;
+    white-space: nowrap;
+    line-height: 1.5em;
+    font-weight: bold;
+}
+.sheet-rolltemplate-pc .sheet-blacklabel.sheet-med {
+    min-width: 75px;
+    padding: 0px 20px 0px 2px;
+}
+.sheet-rolltemplate-mancerroll .sheet-blacklabel.sheet-med {
+    min-width: 110px;
+    padding: 0px 0px 0px 4px;
+}
+.sheet-rolltemplate-npc .sheet-blacklabel.sheet-med {
+    min-width: 70px;
+    padding: 0px 2px 0px 2px;
+    background: linear-gradient(to right,#c3996b7a,white);
+}
+.sheet-rolltemplate-pc .sheet-blacklabel.sheet-med.sheet-right {
+    padding: 0px 2px 0px 20px;
+    text-align: right;
+}
+.sheet-rolltemplate-npc .sheet-blacklabel.sheet-med.sheet-right {
+    text-align: right;
+    background: linear-gradient(to left,#c3996b7a,white);
+}
+.sheet-rolltemplate-pc .sheet-blacklabel.sheet-med.sheet-yellow {
+    color: #E6DD94;
+    font-weight: normal;
+}
+.sheet-rolltemplate-npc .sheet-blacklabel.sheet-med.sheet-yellow {
+    color: #501414;
+    font-weight: normal;
+}
+
+.sheet-rolltemplate-pc .sheet-blacklabel.sheet-med img.sheet-brdleft,
+.sheet-rolltemplate-mancerroll .sheet-blacklabel.sheet-med img.sheet-brdleft,
+.sheet-rolltemplate-npc .sheet-blacklabel.sheet-med img.sheet-brdleft,
+.sheet-rolltemplate-pc .sheet-blacklabel.sheet-med img.sheet-brdright,
+.sheet-rolltemplate-mancerroll .sheet-blacklabel.sheet-med img.sheet-brdright,
+.sheet-rolltemplate-npc .sheet-blacklabel.sheet-med img.sheet-brdright {
+    height: 20px;
+}
+
+.sheet-rolltemplate-pc .sheet-blacklabel .sheet-big,
+.sheet-rolltemplate-npc .sheet-big {
+    display: inline;
+    font-family: sans-serif;
+    font-size: 1.0em;
+    line-height: 1.0em;
+    padding-left: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.sheet-rolltemplate-npc .sheet-big {color: #3C2517;}
+
+.sheet-rolltemplate-pc .sheet-resright,
+.sheet-rolltemplate-npc .sheet-resright {
+    display: inline;
+    margin-right: 3px;
+    clear: both;
+}
+.sheet-rolltemplate-darkmode:not(.sheet-rolltemplate-kingmaker) {
+    filter: invert(0.88);
+}
+.sheet-rolltemplate-darkmode img, .charsheet .sheet-darkmode .tab-content .tabs--kingmaker img {
+    filter: brightness(0.8) contrast(1.2);
+}
+.sheet-rolltemplate-darkmode:not(.sheet-rolltemplate-kingmaker) .inlinerollresult {
+    background-color: transparent;
+    border: none;
+}
+
+/* ===== CONFIRMATIONS ===== */
+.mancer_confirm,
+.npc_confirm,
+.initialize_character,
+.compendium_warning {
+    display: none;
+}
+.mancer_confirm,
+.npc_confirm,
+.initialize_character {
+    background: white;
+}
+.compendium_warning {
+    background: rgba(230,221,148,0.8);
+}
+.fullpc.active-drop-target.dropping,
+.mancer_confirm_flag[value="1"] ~ .fullpc,
+.npc_confirm_flag[value="1"] ~ .fullpc,
+.initialize_character_flag[value="1"] ~ .fullpc,
+.initialize_character_flag[value="1"] ~ .statblock {
+    opacity: 0.5;
+    transition: opacity .15s ease-in-out;
+    -moz-transition: opacity .15s ease-in-out;
+    -webkit-transition: opacity .15s ease-in-out;
+    background-color: transparent;
+}
+.fullpc.active-drop-target.dropping ~ .compendium_warning,
+.mancer_confirm_flag[value="1"] ~ .mancer_confirm,
+.npc_confirm_flag[value="1"] ~ .npc_confirm,
+.initialize_character_flag[value="1"] ~ .initialize_character {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    z-index: 100;
+    border: 2px solid black;
+    text-align: center;
+    width: 500px;
+    height: 220px;
+    box-shadow: 6px 6px 6px rgba(128,128,128,0.5);
+}
+.mancer_confirm button[type="action"].myrol,
+.npc_confirm button[type="action"].myrol {
+    width: 370px;
+    text-align: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 32px;
+    background: black;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.mancer_confirm button[type="action"].myrol:hover,
+.npc_confirm button[type="action"].myrol:hover {
+    color: #BE202E;
+}
+
+/* ===== MANCER ===== */
+.charmancer {
+    padding: 0px;
+}
+
+.charmancer .flexrow {
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+}
+
+.charmancer select {
+    font-family: "Patrick Hand";
+    font-size: 1.25em;
+}
+
+.charmancer label {
+    margin: 0px;
+}
+.charmancer label.inl {
+    display: inline;
+    margin-right: 4px;
+}
+.charmancer .subrow {
+    border-top: 1px dashed #999;
+    margin-top: 2px;
+}
+.charmancer.container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    flex-basis: 1 1 100%;
+    background: white;
+}
+.charmancer .choices {
+    flex: 50%;
+    max-width: 50%;
+    padding-right: 1em;
+}
+.charmancer .info {
+    flex: 50%;
+    max-width: calc(50% - 2px);
+}
+.charmancer .compendium-page {
+    height: 100%;
+}
+.charmancer iframe {
+    height: 100%;
+    min-height: 50vh;
+    contain: paint;
+}
+.charmancer .choice-showing option:disabled {
+    background-color: #eee;
+}
+.charmancer select span.initials {
+    font-size: 6px;
+}
+.charmancer .topbar {
+    flex: 100%;
+    margin-bottom: 10px;
+    flex: 100%;
+    margin-bottom: 10px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+}
+.charmancer .topbar div {
+    display: inline-block;
+    width: auto;
+    text-align: center;
+    margin: auto;
+}
+.charmancer .topbar div span {
+    font-size: 1em;
+    line-height: 1em;
+    font-weight: bold;
+}
+.charmancer .steps {
+    flex: 100%;
+    margin: 0 0 1em;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    border-top: 1px dotted rgb(140, 140, 140);
+    border-left: 1px dotted rgb(140, 140, 140);
+    box-shadow: 2px 2px 4px rgb(140, 140, 140);
+}
+.charmancer .steps.center {
+    justify-content: center;
+}
+.charmancer .steps.center .step.here span {
+    padding-left:80px;
+    padding-right:80px;
+}
+.charmancer .bottombar,
+.charmancer .controls {
+    flex: 100%;
+    margin-bottom: 1em;
+}
+.charmancer .bottombar {
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row;
+    position: sticky;
+    bottom: 2px;
+    left: calc(50% - 125px);
+    max-width: 250px;
+    background: white;
+    opacity: 0.4;
+}
+.charmancer .bottombar:hover{
+    opacity: 1;
+}
+.charmancer .step,
+.charmancer .nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 12px 0px 12px;
+    color: rgb(140, 140, 140);
+    height: 26px;
+    max-height: 26px;
+    text-align: center;
+    font-family: "Times New Roman";
+    font-size: 1.15em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.charmancer .summary .step {
+    display: inline-block;
+    color: black;
+    font-size: 1em;
+}
+.charmancer .step.cancel,
+.charmancer .nav.cancel {
+    color: #BE202E;
+}
+.charmancer .bottombar .nav.cancel {
+    border: 1px solid black;
+    background: white;
+}
+.charmancer .step:hover,
+.charmancer .step.here:hover,
+.charmancer .step.next:hover,
+.charmancer .step.prev:hover,
+.charmancer .step.done:hover,
+.charmancer .nav.back:hover,
+.charmancer .nav.next:hover {
+    color: #BE202E;
+}
+.charmancer .step.cancel:hover,
+.charmancer .nav.cancel:hover {
+    color: black;
+}
+.charmancer .step.next {
+    background: -webkit-radial-gradient(0 0, circle, transparent 14px, rgb(221, 221, 221) 15px), -webkit-radial-gradient(0 100%, circle, transparent 14px, rgb(221, 221, 221) 15px), -webkit-radial-gradient(100% 0, circle, rgb(221, 221, 221), rgb(221, 221, 221)), -webkit-radial-gradient(100% 100%, circle, rgb(221, 221, 221), rgb(221, 221, 221));
+    background-position: top left, bottom left, top right, bottom right;
+    background-size: 55% 55%;
+    background-repeat: no-repeat;
+    color: black;
+    padding: 0px 2px 0px 12px;
+}
+.charmancer .step.prev {
+    background: -webkit-radial-gradient(0 0, circle, rgb(221, 221, 221), rgb(221, 221, 221)), -webkit-radial-gradient(0 100%, circle, rgb(221, 221, 221), rgb(221, 221, 221)), -webkit-radial-gradient(100% 0, circle, transparent 14px, rgb(221, 221, 221) 15px), -webkit-radial-gradient(100% 100%, circle, transparent 14px, rgb(221, 221, 221) 15px);
+    background-position: top left, bottom left, top right, bottom right;
+    background-size: 55% 55%;
+    background-repeat: no-repeat;
+    color: black;
+    padding: 0px 12px 0px 2px;
+}
+
+.charmancer .step.done {
+    background: -webkit-radial-gradient(0 0, circle, transparent 14px, rgb(221, 221, 221) 15px), -webkit-radial-gradient(0 100%, circle, transparent 14px, rgb(221, 221, 221) 15px), -webkit-radial-gradient(100% 0, circle, transparent 14px, rgb(221, 221, 221) 15px), -webkit-radial-gradient(100% 100%, circle, transparent 14px, rgb(221, 221, 221) 15px);
+    background-position: top left, bottom left, top right, bottom right;
+    background-size: 55% 55%;
+    background-repeat: no-repeat;
+    color: black;
+    padding: 0px 12px 0px 12px;
+}
+.charmancer .step.here {
+    background: -webkit-radial-gradient(0 0, circle, transparent 14px, black 15px), -webkit-radial-gradient(0 100%, circle, transparent 14px, black 15px), -webkit-radial-gradient(100% 0, circle, transparent 14px, black 15px), -webkit-radial-gradient(100% 100%, circle, transparent 14px, black 15px);
+    background-position: top left, bottom left, top right, bottom right;
+    background-size: 55% 55%;
+    background-repeat: no-repeat;
+    color: white;
+}
+.charmancer .nav.back {
+    background: -webkit-radial-gradient(0 0, circle, transparent 14px, black 15px), -webkit-radial-gradient(0 100%, circle, transparent 14px, black 15px), -webkit-radial-gradient(100% 0, circle, black, black), -webkit-radial-gradient(100% 100%, circle, black, black);
+    background-position: top left, bottom left, top right, bottom right;
+    background-size: 55% 55%;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 0px 2px 0px 12px;
+}
+.charmancer div.nav.next {
+    background: -webkit-radial-gradient(0 0, circle, black, black), -webkit-radial-gradient(0 100%, circle, black, black), -webkit-radial-gradient(100% 0, circle, transparent 14px, black 15px), -webkit-radial-gradient(100% 100%, circle, transparent 14px, black 15px);
+    background-position: top left, bottom left, top right, bottom right;
+    background-size: 55% 55%;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 0px 12px 0px 2px;
+}
+.charmancer button {
+    display: inline-block;
+    text-align: center;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    background-color: transparent;
+    border: none;
+    text-transform: inherit;
+    color: inherit;
+}
+.charmancer button:hover {
+    color: #BE202E;
+}
+.charmancer button:focus {
+    outline:0;
+}
+.charmancer .row {
+    border: 1px solid black;
+    border-width: 1px 1px 0px 1px;
+    /* margin: 0 -1em 0 -.5em; */
+    padding: 2px;
+}
+.charmancer .row.last {
+    border-width: 0px 1px 1px 1px;
+}
+
+.charmancer .race_traits,
+.charmancer .class_traits,
+.charmancer .subclass1_traits,
+.charmancer .subclass1_powers,
+.charmancer .subclass2_traits,
+.charmancer .subclass2_powers {
+    color: #404040;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 13px;
+}
+.charmancer .race_traits b,
+.charmancer .class_traits b,
+.charmancer .subclass1_traits b,
+.charmancer .subclass1_powers b,
+.charmancer .subclass2_traits b,
+.charmancer .subclass2_powers b {
+    display: block;
+}
+/* .charmancer .race_traits b + b {
+    margin-top: .5em;
+} */
+.charmancer select {
+    margin-bottom: 0;
+}
+.charmancer label p,
+.charmancer label span {
+    font-weight: normal;
+    font-family: sans-serif;
+    font-size: 1em;
+    color: black;
+}
+.charmancer label span.title {
+    font-weight: bold;
+    font-size: inherit;
+    color: inherit;
+    font-family: sans-serif;
+}
+.charmancer .subrow span.title {
+    font-weight: bold;
+    font-size: inherit;
+    color: #999;
+    font-family: sans-serif;
+}
+.charmancer label,
+.charmancer .label {
+    font-size: 1.1em;
+    padding: 0px;
+}
+.charmancer .label {
+    display: block;
+    font-weight: bold;
+}
+.charmancer select + select {
+    margin-top: .5em;
+}
+.charmancer label.compendium-opt,
+.charmancer label.compendium-opt > *,
+.charmancer label.abilities_attribute {
+    display: inline;
+    vertical-align: unset;
+}
+.charmancer .cancel-prompt {
+    position: absolute;
+    background: white;
+    border: 2px solid black;
+    width: 500px;
+    left: 25%;
+    text-align: center;
+    padding: 40px 50px 30px 50px;
+    top: 150px;
+    box-shadow: 6px 6px 6px rgba(128,128,128,0.5);
+}
+/* .charmancer *[required] {} */
+.charmancer .hilite::after {
+    content: '* required';
+    font-style: italic;
+    font-weight: normal;
+    display: block;
+    font-size: 0.9em;
+    /* font-variant: titling-caps; */
+    text-transform: capitalize;
+}
+.charmancer .abilities_custom .hilite::after {
+    display: inline-block;
+    margin-left: 4px;
+}
+.charmancer .abilities_custom span.title,
+.charmancer .custom_race.race_abilities label span.title {
+    width: 100px;
+}
+.charmancer .warning {
+    color: #BE202E;
+    font-style: italic;
+    margin-top: 1em;
+}
+.charmancer .hilite {
+    color: #BE202E;
+    /* background: rgb(221,221,221); */
+    /* border-radius: .5em; */
+    box-sizing: border-box;
+    /* padding: 2px; */
+}
+.manver .yes_spells {
+    display: flex;
+}
+.charmancer button.mancer {
+    border-radius: 4px;
+    font-family: "Times New Roman";
+    background: black;
+    color: white;
+    font-weight: bold;
+    padding: 0px 2px 0px 2px;
+    font-size: 1.1em;
+}
+.charmancer button.mancer.d6:before {
+    font-family: "dicefontd6";
+    content: "f";
+    font-size: 1.3em;
+    line-height: 1.0em;
+    margin: 0px 2px 0px 2px;
+    font-weight: normal;
+}
+.charmancer button.mancer.clear:before {
+    font-family: "Pictos";
+    content: "1";
+    font-size: 1.2em;
+    line-height: 1.0em;
+    margin: 0px 2px 0px 2px;
+    font-weight: normal;
+}
+.charmancer button.mancer_info {
+    font-family: pictos;
+    font-size: 1.2em;
+    display: inline;
+    border: none;
+    background: none;
+    color: black;
+}
+.charmancer button.mancer_info:hover {
+    color: black;
+    background: none;
+}
+
+.charmancer .skillitem {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    /* border-bottom: 1px dotted #BBB; */
+}
+.charmancer .skillitem:nth-child(even) {
+    background: #DDD;
+}
+.charmancer .skillitem:first-child{
+    margin-top: 10px;
+}
+.charmancer .skillitem .lab {
+    font-weight: bold;
+}
+.charmancer .skillitem .name_skill {
+    width: 190px;
+}
+.charmancer .skillitem .class_skill {
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+.charmancer .skillitem .bonus_skill {
+    width: 35px;
+    text-align: right;
+}
+.charmancer .skillitem .total_skill {
+    width: 30px;
+    text-align: right;
+    font-weight: bold;
+    padding-right: 3px;
+}
+
+.charmancer .abilities_radio_strength,
+.charmancer .abilities_radio_dexterity,
+.charmancer .abilities_radio_constitution,
+.charmancer .abilities_radio_intelligence,
+.charmancer .abilities_radio_wisdom,
+.charmancer .abilities_radio_charisma,
+.charmancer .abilities_radio_strengthd6,
+.charmancer .abilities_radio_dexterityd6,
+.charmancer .abilities_radio_constitutiond6,
+.charmancer .abilities_radio_intelligenced6,
+.charmancer .abilities_radio_wisdomd6,
+.charmancer .abilities_radio_charismad6 {
+    padding: 0px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.charmancer span label.compendium-opt {
+    position: relative;
+}
+.charmancer span label.compendium-opt > span {
+    border: 1px solid black;
+    /* border-radius: 5px; */
+    display: inline-block;
+    min-width: 1.618em;
+    background-color: #DDD;
+    color: black;
+    text-align: center;
+    font-weight: normal;
+    cursor: pointer;
+    font-family: 'Patrick Hand';
+    font-size: 1.25em;
+    padding: 2px;
+}
+.charmancer span label.compendium-opt > input[type=radio]:disabled + span {
+    color: #ddd;
+    background-color: white;
+    border-color: #ddd;
+    cursor: not-allowed;
+}
+.charmancer span label.compendium-opt > input[type=radio]:checked + span {
+    color: white;
+    background-color: black;
+    border: 3px solid #BE202E;
+    font-weight: bold;
+    font-weight: bold;
+}
+.charmancer span .compendium-opt > input[type=radio] {
+    opacity: 0;
+    width: 0;
+    cursor: none;
+}
+.charmancer h4 {
+    font-family: sans-serif;
+    font-size: 1.15em;
+    text-transform: capitalize;
+    padding: 2px 6px 2px 6px;
+    line-height: 18px;
+    margin: 0;
+    font-weight: normal;
+    color: white;
+    text-rendering: optimizelegibility;
+    /* font-family: "Times New Roman"; */
+    background: black;
+}
+
+.charmancer .logos {
+    height: 75px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.charmancer .logo {
+    margin: auto;
+}
+.charmancer .logo.pf {
+    width: 235px;
+}
+.charmancer .logo.cm {
+    width: 300px;
+}
+.charmancer .logo.r20 {
+    width: 200px;
+}
+.charmancer .boxed.greybg {
+    min-width: 35px;
+    display: flex;
+}
+.charmancer .boxed.greybg span {
+    font-family: "Patrick Hand";
+    font-size: 1.2em;
+    margin: auto;
+    color: black;
+}
+.charmancer .separator:after {
+    content: "●";
+    color: black;
+    font-size: 1.5em;
+}
+
+.charmancer .summary_text {
+    margin: 5px 0px 5px 30px;
+    font-weight: normal;
+    font-size: 1em;
+}
+.charmancer .summary_text.red {
+    color: #BE202E;
+}
+.charmancer .summary_text.red.req {
+    font-weight: bold;
+}
+.charmancer .summary_text.red.req::before {
+    font-family: "Pictos";
+    content: "!";
+    font-weight: normal;
+    font-size: 1.3em;
+}
+
+.charmancer .mancer_progress {
+    width: 100%;
+    /* border: 2px solid black; */
+    border-top: 1px dotted rgb(140, 140, 140);
+    border-left: 1px dotted rgb(140, 140, 140);
+    box-shadow: 2px 2px 4px rgb(140, 140, 140);
+    height: 20px;
+    margin-top: 20px;
+}
+
+.charmancer .mancer_progress div {
+    /* background-color: #BE202E; */
+    background-image: linear-gradient(to right, white, #BE202E);
+    height: 100%;
+}
+
+.charmancer button.apply {
+    display: none;
+}
+.charmancer button.apply.not {
+    display: block;
+}
+.charmancer input.apply:not([value="0"]) ~ button.apply {
+    display: block;
+}
+.charmancer input.apply:not([value="0"]) ~ button.apply.not {
+    display: none;
+}
+.charmancer button.apply.not:hover {
+    color: #DDD;
+    cursor: not-allowed;
+}
+
+.ui-dialog .charsheet button[type="roll"]::before {
+    Content:""
+}
+.ui-dialog .charsheet button[type=roll], .ui-dialog .charsheet button[type=compendium] {
+    padding: 0px;
+    font-size: 1.3em;
+    margin: 0px 3px 0px 3px;
+    line-height: normal;
+}
+.ui-dialog .charsheet input[type=number] {
+    width: 30px;
+}
+
+.sheet-darkmode .sheetform, 
+.sheet-darkmode .tabs--kingmaker, 
+.sheet-darkmode .logo.r20 {
+    filter: invert(0.88);
+}
+.sheet-darkmode .edition-3-logo {
+    filter:invert(1);
+}
+.characterviewer label {
+    font-weight: normal;
+    font-size: 1em;
+    margin-bottom: 2px;
+}
+
+.spell .myrow.right {
+    text-align:left;
+}
